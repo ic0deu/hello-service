@@ -2,6 +2,7 @@ package i.c0d.eu;
 
 import i.c0d.eu.resources.HelloResource;
 import io.dropwizard.Application;
+import io.dropwizard.configuration.ResourceConfigurationSourceProvider;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
@@ -19,6 +20,7 @@ public class HelloServiceApplication extends Application<HelloServiceConfigurati
     @Override
     public void initialize(final Bootstrap<HelloServiceConfiguration> bootstrap) {
         // TODO: application initialization
+        bootstrap.setConfigurationSourceProvider(new ResourceConfigurationSourceProvider());
     }
 
     @Override
